@@ -22,7 +22,7 @@ public class AdminLogin {
 	
 	public WebElement getAdminclick() {
 		return Adminclick;
-	}
+	} 
 
 	public WebElement getUNAME() {
 		return UNAME;

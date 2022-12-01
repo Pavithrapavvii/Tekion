@@ -1,12 +1,19 @@
 package com.testyourskill.genericutility;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.Iterator;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
+import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -18,6 +25,10 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 	/**
 	 *   contains all reusable Actions of Webdriver 
 	 * @author Deepak
+	 *
+	 */
+	/**
+	 * @author DELL
 	 *
 	 */
 	public class WebDriverUtility {
@@ -34,20 +45,20 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 		 * @param driver
 		 * @param partailPageURL
 		 */
-		public void waitForPage(WebDriver driver , String partailPageURL) {
-			WebDriverWait wait = new WebDriverWait(driver, IConstants.Explicitly_TIMEOUT);
-			wait.until(ExpectedConditions.urlContains(partailPageURL));
-		}
+//		public void waitForPage(WebDriver driver , String partailPageURL) {
+//			WebDriverWait wait = new WebDriverWait(driver, IConstants.Explicitly_TIMEOUT);
+//			wait.until(ExpectedConditions.urlContains(partailPageURL));
+//		}
 		
 		/**
 		 *   it's an Explicitly wait Always wait for Page to be loaded & available in GUI
 		 * @param driver
 		 * @param partailPageURL
 		 */
-		public void waitForElement(WebDriver driver , WebElement element) {
-			WebDriverWait wait = new WebDriverWait(driver, IConstants.Explicitly_TIMEOUT);
-			wait.until(ExpectedConditions.visibilityOf(element));
-		}
+//		public void waitForElement(WebDriver driver , WebElement element) {
+//			WebDriverWait wait = new WebDriverWait(driver, IConstants.Explicitly_TIMEOUT);
+//			wait.until(ExpectedConditions.visibilityOf(element));
+//		}
 		
 		
 		/**
@@ -191,6 +202,17 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 			   act.sendKeys(Keys.ENTER).perform();
 		   } 
 
+		   
+		   public static void takeScreenshot(WebDriver driver, String name) throws IOException {
+			   
+			 // FileInputStream fis =new FileInputStream("./"+name+JavaUtility.getRanDomNumber());
+			  TakesScreenshot sDriver = (TakesScreenshot)driver;
+			 File src = sDriver.getScreenshotAs(OutputType.FILE);
+			  File dest = new File("./"+name+JavaUtility.getRanDomNumber()+".png");
+			  FileUtils.copyFile(src, dest);
+		   }
+		   
+		   
 
 
 	}

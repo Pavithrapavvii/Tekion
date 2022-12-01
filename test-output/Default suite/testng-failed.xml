@@ -3,17 +3,14 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.testyourskill.PRACTICE.StudentSignup22">
+      <class name="Practice.InstagramScroll">
         <methods>
-          <include name="confgBC"/>
-          <include name="configAS"/>
-          <include name="configAC"/>
-          <include name="confgAM"/>
-          <include name="AttendQuiz"/>
-          <include name="configBS"/>
-          <include name="configBM"/>
+          <include name="btConfig"/>
+          <include name="ista"/>
+          <include name="bsConfig"/>
+          <include name="bcConfig"/>
         </methods>
-      </class> <!-- com.testyourskill.PRACTICE.StudentSignup22 -->
+      </class> <!-- Practice.InstagramScroll -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

@@ -29,10 +29,10 @@ public class BaseClass {
 	
 	//Connect to the DataBase
 	@BeforeSuite (groups = {"smoke","regresion"})
-	public void configBS() {
+	public void configBS() 
+	{
 		System.out.println("........connect to database........");
-		
-		
+			
 	}
 	//Launch The Browser
 	@BeforeClass (groups = {"smoke","regresion"})
@@ -81,7 +81,7 @@ public class BaseClass {
 		}catch (IOException e)
 		{
 		
-	}
+	     }
 		System.out.println("screenshot saved successfullly");
 	
 	}
